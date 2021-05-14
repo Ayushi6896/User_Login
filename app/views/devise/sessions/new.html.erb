@@ -1,0 +1,32 @@
+<h2>Sign in to Demo Project</h2>
+
+<div class="main_form">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <table class="t1">
+      <tr class="field">
+        <td><%= f.label :email %></td>
+        <td><%= f.email_field :email, autofocus: true, autocomplete: "email" %></td>
+      </tr>
+      <tr class="field">
+        <td><%= f.label :password %></td>
+        <td><%= f.password_field :password, autocomplete: "current-password" %>
+      </tr>
+    </table>
+    <table class="t2">
+      <% if devise_mapping.rememberable? %>
+      <tr class="field">
+        <td><%= f.check_box :remember_me %></td>
+        <td><%= f.label :remember_me %></td>
+      </tr>
+      <% end %>
+    </table>
+    <table>
+      <tr class="actions">
+          <%= f.submit "Log in", :class => 'submit_action' %>
+      </tr>
+    <table/>
+  <% end %>
+  <table>
+    <tr><%= render "devise/shared/links" %></tr>
+  </table>
+</div>

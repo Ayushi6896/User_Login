@@ -1,0 +1,4 @@
+<h1>WELCOME <%= current_user.name %>!</h1>
+<% if current_user %>
+    <p><%= link_to 'Click Here to Logout', destroy_user_session_path, method: 'delete' %><p>
+<% end %>
